@@ -1,0 +1,48 @@
+/* style.scss */
+body {
+  width: 100%;
+  *zoom: 1; }
+  body:before, body:after {
+    content: "";
+    display: table; }
+  body:after {
+    clear: both; }
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0; }
+
+body {
+  font-family: 'Lato', sans-serif; }
+
+section {
+  max-width: 960px;
+  margin: 0 auto;
+  overflow: hidden; }
+
+article {
+  display: inline;
+  float: left;
+  width: 72.91667%;
+  margin: 0 1.04167%;
+  background: #fee;
+  padding: 20px; }
+
+aside {
+  display: inline;
+  float: left;
+  width: 22.91667%;
+  margin: 0 1.04167%;
+  background: #eef;
+  border: 4px solid #ddf;
+  padding: 8px; }
+
+@media screen and (max-width: 720px) {
+  article,
+  aside {
+    display: inline;
+    float: left;
+    width: 97.91667%;
+    margin: 0 1.04167%;
+    margin-bottom: 1em; } }
