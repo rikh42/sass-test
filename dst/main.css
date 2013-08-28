@@ -153,8 +153,8 @@ body {
 
 header {
   background: #353535;
-  padding: 16px;
-  margin-bottom: 24px;
+  padding: 24px 0;
+  border-bottom: 4px solid #fb8e0d;
 }
 header li {
   color: #fff;
@@ -168,6 +168,16 @@ header nav {
   overflow: hidden;
 }
 
+.hero {
+  background: #ebeae8 url("../office5.jpg") 50% -50px no-repeat;
+  height: 600px;
+  margin-bottom: 24px;
+}
+.hero .container {
+  padding-top: 140px;
+  padding-left: 60px;
+}
+
 .panel {
   background: #fb8e0d;
   color: #fff;
@@ -178,7 +188,7 @@ header nav {
   border-radius: 2px;
 }
 
-section {
+section, .container {
   max-width: 960px;
   margin: 0 auto;
   overflow: hidden;
