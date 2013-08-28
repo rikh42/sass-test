@@ -52,60 +52,70 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 97px;
   line-height: 120px;
   margin-bottom: 24px;
+  color: #383838;
 }
 
 .giga {
   font-size: 78px;
   line-height: 96px;
   margin-bottom: 24px;
+  color: #383838;
 }
 
 .mega {
   font-size: 63px;
   line-height: 72px;
   margin-bottom: 24px;
+  color: #383838;
 }
 
 .alpha, h1 {
   font-size: 51px;
   line-height: 72px;
   margin-bottom: 24px;
+  color: #383838;
 }
 
 .beta, h2 {
   font-size: 41px;
   line-height: 48px;
   margin-bottom: 24px;
+  color: #383838;
 }
 
 .gamma, h3 {
   font-size: 33px;
   line-height: 48px;
   margin-bottom: 24px;
+  color: #383838;
 }
 
 .delta, h4 {
   font-size: 27px;
   line-height: 48px;
   margin-bottom: 24px;
+  color: #383838;
 }
 
 .epsilon, h5 {
   font-size: 22px;
   line-height: 48px;
   margin-bottom: 24px;
+  color: #383838;
 }
 
 .zeta, h6 {
   font-size: 18px;
   line-height: 24px;
   margin-bottom: 24px;
+  color: #383838;
 }
 
 p {
   font-size: 18px;
   line-height: 24px;
   margin-bottom: 24px;
+  color: #353535;
 }
 
 ul {
@@ -117,6 +127,7 @@ ul {
 li {
   font-size: 18px;
   line-height: 24px;
+  color: #353535;
 }
 
 body {
@@ -137,6 +148,7 @@ body:after {
 
 body {
   font-family: 'Lato', sans-serif;
+  background: #e5e6dc url(/content/images/texture.png);
 }
 
 section {
@@ -151,6 +163,7 @@ article {
   width: 64.58333%;
   margin: 0 1.04167%;
   padding: 8px;
+  background: #fafaf5;
 }
 @media screen and (max-width: 720px) {
   article {
@@ -167,8 +180,9 @@ aside {
   float: left;
   width: 31.25%;
   margin: 0 1.04167%;
-  border-left: 4px solid #ddf;
+  border-left: 4px solid #fb8e0d;
   padding: 8px;
+  background: #fafaf5;
 }
 @media screen and (max-width: 720px) {
   aside {

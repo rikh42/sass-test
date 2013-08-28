@@ -1,9 +1,12 @@
 
+// Colours
+$headline-colour: #383838;
+$body-colour: #353535;
+$accent-colour: #FB8E0D;
+$paper-colour: #fafaf5;
 
-//$rhythm: 8px !default;
 $base-font-size: 18px !default; 
 $base-line-height: 8px !default;
-
 $font-unit: $base-font-size;
 
 // Set to false if you want to use absolute pixels in sizing your typography.
@@ -19,7 +22,6 @@ $round-to-nearest-half-line: false !default;
 $min-line-padding: 2px !default;
 
 $ratio: 1.25;
-
 $zeta: $base-font-size !default;
 $epsilon: floor($zeta * $ratio) !default;
 $delta: floor($epsilon * $ratio) !default;
@@ -29,6 +31,8 @@ $alpha: floor($beta * $ratio) !default;
 $mega: floor($alpha * $ratio) !default;
 $giga: floor($mega * $ratio) !default;
 $tera: floor($giga * $ratio) !default;
+
+
 
 
 
@@ -108,6 +112,7 @@ $leading-below: lines-for-font-size($base-font-size) * $base-line-height;
 	.#{nth($size, 1)} {
 		@include adjust-font-size-to(nth($size, 2), lines-for-font-size(nth($size, 2)));
 		margin-bottom: $leading-below;
+    color: $headline-colour;
 	}
 }
 
@@ -145,6 +150,7 @@ h6 {
 p {
 	@include adjust-font-size-to($base-font-size);
 	margin-bottom: $leading-below;
+  color: $body-colour;
 }
 
 ul {
@@ -156,4 +162,5 @@ ul {
 
 li {
 	@include adjust-font-size-to($base-font-size);
+  color: $body-colour;
 }

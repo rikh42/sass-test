@@ -32,6 +32,7 @@ $total-width: 100%;
 
 body {
 	font-family: 'Lato', sans-serif;
+	background: #E5E6DC url(/content/images/texture.png);
 }
 
 section {
@@ -44,6 +45,7 @@ section {
 article {
 	@include column(8);
 	padding: $base-line-height;
+	background: $paper-colour;
 
 	@media screen and (max-width: 720px) {
 		@include column(12);
@@ -52,8 +54,9 @@ article {
 }
 aside {
 	@include column(4);
-	border-left: 4px solid #ddf;
+	border-left: 4px solid $accent-colour;
 	padding: $base-line-height;
+	background: $paper-colour;
 
 	@media screen and (max-width: 720px) {
 		@include column(12);
