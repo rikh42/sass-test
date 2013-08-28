@@ -49,56 +49,56 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .tera {
-  font-size: 97px;
-  line-height: 120px;
+  font-size: 156px;
+  line-height: 168px;
   margin-bottom: 24px;
   color: #383838;
 }
 
 .giga {
-  font-size: 78px;
-  line-height: 96px;
+  font-size: 118px;
+  line-height: 144px;
   margin-bottom: 24px;
   color: #383838;
 }
 
 .mega {
-  font-size: 63px;
-  line-height: 72px;
+  font-size: 89px;
+  line-height: 96px;
   margin-bottom: 24px;
   color: #383838;
 }
 
 .alpha, h1 {
-  font-size: 51px;
+  font-size: 67px;
   line-height: 72px;
   margin-bottom: 24px;
   color: #383838;
 }
 
 .beta, h2 {
-  font-size: 41px;
-  line-height: 48px;
+  font-size: 51px;
+  line-height: 72px;
   margin-bottom: 24px;
   color: #383838;
 }
 
 .gamma, h3 {
-  font-size: 33px;
+  font-size: 39px;
   line-height: 48px;
   margin-bottom: 24px;
   color: #383838;
 }
 
 .delta, h4 {
-  font-size: 27px;
+  font-size: 30px;
   line-height: 48px;
   margin-bottom: 24px;
   color: #383838;
 }
 
 .epsilon, h5 {
-  font-size: 22px;
+  font-size: 23px;
   line-height: 48px;
   margin-bottom: 24px;
   color: #383838;
@@ -148,7 +148,34 @@ body:after {
 
 body {
   font-family: 'Lato', sans-serif;
-  background: #e5e6dc url(/content/images/texture.png);
+  background: #fafaf5;
+}
+
+header {
+  background: #353535;
+  padding: 16px;
+  margin-bottom: 24px;
+}
+header li {
+  color: #fff;
+}
+header ul {
+  margin: 0;
+}
+header nav {
+  max-width: 960px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.panel {
+  background: #fb8e0d;
+  color: #fff;
+  padding: 24px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -khtml-border-radius: 2px;
+  border-radius: 2px;
 }
 
 section {
@@ -163,7 +190,6 @@ article {
   width: 64.58333%;
   margin: 0 1.04167%;
   padding: 8px;
-  background: #fafaf5;
 }
 @media screen and (max-width: 720px) {
   article {
@@ -171,7 +197,7 @@ article {
     float: left;
     width: 97.91667%;
     margin: 0 1.04167%;
-    margin-bottom: 8px;
+    margin-bottom: 24px;
   }
 }
 
@@ -180,9 +206,8 @@ aside {
   float: left;
   width: 31.25%;
   margin: 0 1.04167%;
-  border-left: 4px solid #fb8e0d;
+  border-left: 1px solid #fadaaf;
   padding: 8px;
-  background: #fafaf5;
 }
 @media screen and (max-width: 720px) {
   aside {
@@ -190,7 +215,7 @@ aside {
     float: left;
     width: 97.91667%;
     margin: 0 1.04167%;
-    margin-bottom: 8px;
+    margin-bottom: 24px;
     border-left: none;
   }
 }

@@ -1,5 +1,8 @@
 /* style.scss */
 
+@import 'settings.scss';
+@import 'mixins.scss';
+
 @import 'reset.scss';
 
 //@import 'vars-typeplate.scss';
@@ -32,7 +35,37 @@ $total-width: 100%;
 
 body {
 	font-family: 'Lato', sans-serif;
-	background: #E5E6DC url(/content/images/texture.png);
+	background: $paper-colour;
+}
+
+
+header {
+	background: $body-colour;
+	padding: $base-line-height*2 ;
+	margin-bottom: $leading-below;
+
+
+		li {
+		color: #fff;
+	}
+
+	ul {
+		margin: 0;
+	}
+
+	nav {
+		max-width: 960px;
+	margin: 0 auto;
+	overflow: hidden;
+	}
+}
+
+
+.panel {
+	background: $accent-colour;
+	color: #fff;
+	padding: $leading-below;
+	@include border-radius(2px);
 }
 
 section {
@@ -45,22 +78,20 @@ section {
 article {
 	@include column(8);
 	padding: $base-line-height;
-	background: $paper-colour;
 
 	@media screen and (max-width: 720px) {
 		@include column(12);
-		margin-bottom: $base-line-height;
+		margin-bottom: $leading-below;
 	}
 }
 aside {
 	@include column(4);
-	border-left: 4px solid $accent-colour;
+	border-left: 1px solid $accent-light-colour;
 	padding: $base-line-height;
-	background: $paper-colour;
 
 	@media screen and (max-width: 720px) {
 		@include column(12);
-		margin-bottom: $base-line-height;
+		margin-bottom: $leading-below;
 		border-left: none;
 	}
 }

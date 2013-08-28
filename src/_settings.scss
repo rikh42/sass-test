@@ -1,0 +1,43 @@
+// Colours
+$headline-colour: #383838;
+$body-colour: #353535;
+$accent-colour: #FB8E0D;
+$accent-light-colour: #FADAAF;
+$paper-colour: #fafaf5;
+
+
+// Base font sizes
+$base-font-size: 18px !default; 
+$base-line-height: 8px !default;
+$font-unit: $base-font-size;
+$leading-below: (floor($base-font-size / $base-line-height) + 1) * $base-line-height;
+
+
+// Set to false if you want to use absolute pixels in sizing your typography.
+$relative-font-sizing: true !default;
+
+// Allows the `adjust-font-size-to` mixin and the `lines-for-font-size` function
+// to round the line height to the nearest half line height instead of the
+// nearest integral line height to avoid large spacing between lines.
+$round-to-nearest-half-line: false !default;
+
+// Ensure there is at least this many pixels
+// of vertical padding above and below the text.
+$min-line-padding: 2px !default;
+
+// Ratio controls the sizing of different heading levels. We scale up from the base font size.
+$ratio: 1.33;
+$zeta: $base-font-size !default;
+$epsilon: floor($zeta * $ratio) !default;
+$delta: floor($epsilon * $ratio) !default;
+$gamma: floor($delta * $ratio) !default;
+$beta: floor($gamma * $ratio) !default;
+$alpha: floor($beta * $ratio) !default;
+$mega: floor($alpha * $ratio) !default;
+$giga: floor($mega * $ratio) !default;
+$tera: floor($giga * $ratio) !default;
+
+// Get all the sizes in an array, which is helpful when generating some of the css
+$font-sizes-array: tera $tera, giga $giga, mega $mega, alpha $alpha, beta $beta, gamma $gamma, delta $delta, epsilon $epsilon, zeta $zeta;
+
+
