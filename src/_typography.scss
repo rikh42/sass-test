@@ -39,10 +39,12 @@ $tera: floor($giga * $ratio) !default;
 // of this font should use up. It does not have to be an integer, but it
 // defaults to the smallest integer that is large enough to fit the font.
 // Use $from-size to adjust from a font-size other than the base font-size.
-@mixin adjust-font-size-to($to-size, $lines: lines-for-font-size($to-size), $from-size: $base-font-size) {
+@mixin adjust-font-size-to($to-size, $lines: lines-for-font-size($to-size), $from-size: $base-font-size) 
+{
   @if not $relative-font-sizing and $from-size != $base-font-size {
     @warn "$relative-font-sizing is false but a relative font size was passed to adjust-font-size-to";
   }
+
   font-size: $font-unit * $to-size / $from-size;
   @include adjust-leading-to($lines);
 }
@@ -51,39 +53,41 @@ $tera: floor($giga * $ratio) !default;
 // $lines specifies how many multiples of the baseline rhythm each line of this
 // font should use up. It does not have to be an integer, but it defaults to the
 // smallest integer that is large enough to fit the font.
-@mixin adjust-leading-to($lines) {
+@mixin adjust-leading-to($lines) 
+{
   line-height: ceil($lines/3)*3 * $base-line-height;
 }
 
 // Calculate rhythm units.
-@function rhythm(
-  $lines: 1,
-  $font-size: $base-font-size,
-  $offset: 0
-) {
+@function rhythm($lines: 1, $font-size: $base-font-size, $offset: 0) 
+{
   @if not $relative-font-sizing and $font-size != $base-font-size {
     @warn "$relative-font-sizing is false but a relative font size was passed to the rhythm function";
   }
+
   $rhythm: $font-unit * ($lines * $base-line-height - $offset) / $font-size;
+
   // Round the pixels down to nearest integer.
   @if unit($rhythm) == px {
     $rhythm: floor($rhythm);
   }
+
   @return $rhythm;
 }
 
 
 
-
-
 // Calculate the minimum multiple of rhythm units needed to contain the font-size.
-@function lines-for-font-size($font-size) {
+@function lines-for-font-size($font-size) 
+{
   $lines: if($round-to-nearest-half-line,
               ceil(2 * $font-size / $base-line-height) / 2,
               ceil($font-size / $base-line-height));
+
   @if $lines * $base-line-height - $font-size < $min-line-padding * 2 {
     $lines: $lines + if($round-to-nearest-half-line, 0.5, 1);
   }
+  
   @return $lines;
 }
 
@@ -93,8 +97,8 @@ $tera: floor($giga * $ratio) !default;
 	text-rendering: optimizeLegibility; // voodoo to enable ligatures and kerning
 }
 
-$sizes: tera $tera, giga $giga, mega $mega, alpha $alpha, beta $beta, gamma $gamma, delta $delta, epsilon $epsilon, zeta $zeta;
 
+$sizes: tera $tera, giga $giga, mega $mega, alpha $alpha, beta $beta, gamma $gamma, delta $delta, epsilon $epsilon, zeta $zeta;
 $leading-below: lines-for-font-size($base-font-size) * $base-line-height;
 
 // Sass loop to associate h1-h6 tags with their appropriate greek
@@ -102,7 +106,6 @@ $leading-below: lines-for-font-size($base-font-size) * $base-line-height;
 // for each size in the scale, create a class
 @each $size in $sizes {
 	.#{nth($size, 1)} {
-		//@include type-scale(nth($size, 2));
 		@include adjust-font-size-to(nth($size, 2), lines-for-font-size(nth($size, 2)));
 		margin-bottom: $leading-below;
 	}
@@ -139,14 +142,12 @@ h6 {
 	@extend %hN;
 }
 
-p
-{
+p {
 	@include adjust-font-size-to($base-font-size);
 	margin-bottom: $leading-below;
 }
 
-ul
-{
+ul {
 	margin-bottom: $leading-below;	
 	margin-left: $leading-below;
 	list-style-type: disc;
