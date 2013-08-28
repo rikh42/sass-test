@@ -1,0 +1,158 @@
+
+
+//$rhythm: 8px !default;
+$base-font-size: 18px !default; 
+$base-line-height: 8px !default;
+
+$font-unit: $base-font-size;
+
+// Set to false if you want to use absolute pixels in sizing your typography.
+$relative-font-sizing: true !default;
+
+// Allows the `adjust-font-size-to` mixin and the `lines-for-font-size` function
+// to round the line height to the nearest half line height instead of the
+// nearest integral line height to avoid large spacing between lines.
+$round-to-nearest-half-line: false !default;
+
+// Ensure there is at least this many pixels
+// of vertical padding above and below the text.
+$min-line-padding: 2px !default;
+
+$ratio: 1.25;
+
+$zeta: $base-font-size !default;
+$epsilon: floor($zeta * $ratio) !default;
+$delta: floor($epsilon * $ratio) !default;
+$gamma: floor($delta * $ratio) !default;
+$beta: floor($gamma * $ratio) !default;
+$alpha: floor($beta * $ratio) !default;
+$mega: floor($alpha * $ratio) !default;
+$giga: floor($mega * $ratio) !default;
+$tera: floor($giga * $ratio) !default;
+
+
+
+
+
+// Adjust a block to have a different font size and line height to maintain the
+// rhythm. $lines specifies how many multiples of the baseline rhythm each line
+// of this font should use up. It does not have to be an integer, but it
+// defaults to the smallest integer that is large enough to fit the font.
+// Use $from-size to adjust from a font-size other than the base font-size.
+@mixin adjust-font-size-to($to-size, $lines: lines-for-font-size($to-size), $from-size: $base-font-size) {
+  @if not $relative-font-sizing and $from-size != $base-font-size {
+    @warn "$relative-font-sizing is false but a relative font size was passed to adjust-font-size-to";
+  }
+  font-size: $font-unit * $to-size / $from-size;
+  @include adjust-leading-to($lines);
+}
+
+// Adjust a block to have different line height to maintain the rhythm.
+// $lines specifies how many multiples of the baseline rhythm each line of this
+// font should use up. It does not have to be an integer, but it defaults to the
+// smallest integer that is large enough to fit the font.
+@mixin adjust-leading-to($lines) {
+  line-height: ceil($lines/3)*3 * $base-line-height;
+}
+
+// Calculate rhythm units.
+@function rhythm(
+  $lines: 1,
+  $font-size: $base-font-size,
+  $offset: 0
+) {
+  @if not $relative-font-sizing and $font-size != $base-font-size {
+    @warn "$relative-font-sizing is false but a relative font size was passed to the rhythm function";
+  }
+  $rhythm: $font-unit * ($lines * $base-line-height - $offset) / $font-size;
+  // Round the pixels down to nearest integer.
+  @if unit($rhythm) == px {
+    $rhythm: floor($rhythm);
+  }
+  @return $rhythm;
+}
+
+
+
+
+
+// Calculate the minimum multiple of rhythm units needed to contain the font-size.
+@function lines-for-font-size($font-size) {
+  $lines: if($round-to-nearest-half-line,
+              ceil(2 * $font-size / $base-line-height) / 2,
+              ceil($font-size / $base-line-height));
+  @if $lines * $base-line-height - $font-size < $min-line-padding * 2 {
+    $lines: $lines + if($round-to-nearest-half-line, 0.5, 1);
+  }
+  @return $lines;
+}
+
+
+// styles for all headings, in the style of @csswizardry
+%hN {
+	text-rendering: optimizeLegibility; // voodoo to enable ligatures and kerning
+}
+
+$sizes: tera $tera, giga $giga, mega $mega, alpha $alpha, beta $beta, gamma $gamma, delta $delta, epsilon $epsilon, zeta $zeta;
+
+$leading-below: lines-for-font-size($base-font-size) * $base-line-height;
+
+// Sass loop to associate h1-h6 tags with their appropriate greek
+// heading based on a modular scale.
+// for each size in the scale, create a class
+@each $size in $sizes {
+	.#{nth($size, 1)} {
+		//@include type-scale(nth($size, 2));
+		@include adjust-font-size-to(nth($size, 2), lines-for-font-size(nth($size, 2)));
+		margin-bottom: $leading-below;
+	}
+}
+
+// associate h1-h6 tags with their appropriate greek heading
+h1 {
+	@extend .alpha;
+	@extend %hN;
+}
+
+h2 {
+	@extend .beta;
+	@extend %hN;
+}
+
+h3 {
+	@extend .gamma;
+	@extend %hN;
+}
+
+h4 {
+	@extend .delta;
+	@extend %hN;
+}
+
+h5 {
+	@extend .epsilon;
+	@extend %hN;
+}
+
+h6 {
+	@extend .zeta;
+	@extend %hN;
+}
+
+p
+{
+	@include adjust-font-size-to($base-font-size);
+	margin-bottom: $leading-below;
+}
+
+ul
+{
+	margin-bottom: $leading-below;	
+	margin-left: $leading-below;
+	list-style-type: disc;
+
+}
+
+li {
+	@include adjust-font-size-to($base-font-size);
+}

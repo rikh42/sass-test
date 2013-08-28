@@ -1,8 +1,12 @@
 /* style.scss */
 
-@import 'vars-typeplate.scss';
-@import 'typeplate.scss';
+@import 'reset.scss';
+
+//@import 'vars-typeplate.scss';
+//@import 'typeplate.scss';
+@import 'typography.scss';
 @import 'grid.scss';
+
 
 
 //////////
@@ -24,9 +28,8 @@ $total-width: 100%;
 
 * {
 	box-sizing: border-box;
-	margin: 0;
-	padding: 0;
 }
+
 body {
 	font-family: 'Lato', sans-serif;
 }
@@ -41,19 +44,22 @@ section {
 article {
 	@include column(9);
 	background: #fee;
-	padding: 20px;
+	padding: $base-line-height;
+
+	@media screen and (max-width: 720px) {
+		@include column(12);
+		margin-bottom: $base-line-height;
+	}
 }
 aside {
 	@include column(3);
 	background: #eef;
 	border: 4px solid #ddf;
-	padding: 8px;
-}
+	padding: $base-line-height - 4;
 
-@media screen and (max-width: 720px) {
-	article,
-	aside {
+	@media screen and (max-width: 720px) {
 		@include column(12);
-		margin-bottom: 1em;
+		margin-bottom: $base-line-height;
 	}
 }
+
