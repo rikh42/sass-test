@@ -9,6 +9,7 @@
 //@import 'typeplate.scss';
 @import 'typography.scss';
 @import 'grid.scss';
+@import 'markdown.scss';
 
 
 
@@ -42,7 +43,7 @@ body {
 header {
 	background: $body-colour;
 	padding: $base-line-height*3 0;
-	//margin-bottom: $leading-below;
+	margin-bottom: $leading-below;
 	border-bottom: 4px solid $accent-colour;
 
 
@@ -77,6 +78,35 @@ header {
 	color: #fff;
 	padding: $leading-below;
 	@include border-radius(2px);
+}
+
+
+.keywords {
+	margin-bottom: $leading-below;
+
+	.word {
+		@extend .zeta;
+		color: #636363;
+		font-weight: 700;
+		line-height: adjust-leading-to(3);
+	}
+	.hide {
+		display: none;
+	}
+	.mark {
+		color: #979797;
+	}
+}
+
+h2, h3, h4 {
+	//background: $accent-colour;
+	//color: #fff;
+	//padding-left: $leading-below/2;
+	color: #999;
+}
+
+.microbio {
+	font-size: 20px;
 }
 
 section, .container {

@@ -65,6 +65,8 @@
 // styles for all headings, in the style of @csswizardry
 %hN {
 	text-rendering: optimizeLegibility; // voodoo to enable ligatures and kerning
+  margin-bottom: $leading-below;
+  color: $headline-colour;
 }
 
 
@@ -75,8 +77,6 @@
 @each $size in $font-sizes-array {
 	.#{nth($size, 1)} {
 		@include adjust-font-size-to(nth($size, 2), lines-for-font-size(nth($size, 2)));
-		margin-bottom: $leading-below;
-    color: $headline-colour;
 	}
 }
 
