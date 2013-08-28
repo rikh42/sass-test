@@ -42,8 +42,7 @@ section {
 
 // main column & sidebar
 article {
-	@include column(9);
-	background: #fee;
+	@include column(8);
 	padding: $base-line-height;
 
 	@media screen and (max-width: 720px) {
@@ -52,14 +51,14 @@ article {
 	}
 }
 aside {
-	@include column(3);
-	background: #eef;
-	border: 4px solid #ddf;
-	padding: $base-line-height - 4;
+	@include column(4);
+	border-left: 4px solid #ddf;
+	padding: $base-line-height;
 
 	@media screen and (max-width: 720px) {
 		@include column(12);
 		margin-bottom: $base-line-height;
+		border-left: none;
 	}
 }
 
