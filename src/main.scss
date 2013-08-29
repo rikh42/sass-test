@@ -109,6 +109,12 @@ h2, h3, h4 {
 	font-size: 20px;
 }
 
+.avatar {
+	width: 120;
+	height: 120;
+	@include border-radius(120px);
+}
+
 section, .container {
 	max-width: 960px;
 	margin: 0 auto;

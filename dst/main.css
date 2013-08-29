@@ -157,6 +157,14 @@ h2, h3, h4 {
 .microbio {
   font-size: 20px; }
 
+.avatar {
+  width: 120;
+  height: 120;
+  -webkit-border-radius: 120px;
+  -moz-border-radius: 120px;
+  -khtml-border-radius: 120px;
+  border-radius: 120px; }
+
 section, .container {
   max-width: 960px;
   margin: 0 auto;
