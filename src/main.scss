@@ -109,9 +109,31 @@ h2, h3, h4 {
 	font-size: 20px;
 }
 
+.header {
+	@include clearfix();
+
+	.img, .brand {
+		@include column(3);
+		background: #fee;
+	}
+
+	.details {
+		@include column(6);
+
+		h2 {
+			@extend .zeta;
+		}
+
+		a {
+			display: block;
+		}
+	}
+	
+}
 .avatar {
-	width: 120;
-	height: 120;
+	display: block;
+	width: 120px;
+	height: 120px;
 	@include border-radius(120px);
 }
 

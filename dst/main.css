@@ -73,7 +73,7 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 23px;
   line-height: 48px; }
 
-.zeta, h6, .keywords .word {
+.zeta, h6, .keywords .word, .header .details h2 {
   font-size: 18px;
   line-height: 24px; }
 
@@ -157,9 +157,31 @@ h2, h3, h4 {
 .microbio {
   font-size: 20px; }
 
+.header {
+  *zoom: 1; }
+  .header:before, .header:after {
+    content: "";
+    display: table; }
+  .header:after {
+    clear: both; }
+  .header .img, .header .brand {
+    display: inline;
+    float: left;
+    width: 22.91667%;
+    margin: 0 1.04167%;
+    background: #fee; }
+  .header .details {
+    display: inline;
+    float: left;
+    width: 47.91667%;
+    margin: 0 1.04167%; }
+    .header .details a {
+      display: block; }
+
 .avatar {
-  width: 120;
-  height: 120;
+  display: block;
+  width: 120px;
+  height: 120px;
   -webkit-border-radius: 120px;
   -moz-border-radius: 120px;
   -khtml-border-radius: 120px;
